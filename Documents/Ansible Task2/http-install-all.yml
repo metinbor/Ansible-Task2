@@ -1,0 +1,6 @@
+- hosts: all
+  tasks:
+  - name: include playbook
+    include: "{{  ansible_os_family  }}-httpd.yml"
+
+    

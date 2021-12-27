@@ -1,0 +1,22 @@
+- name: install Httpd on Ubuntu
+  apt:
+    name: apache2
+    update_cache: yes
+    state: latest
+- name: Start and Enable Httpd
+  service:
+    state: started
+    name: apache2
+    enabled: yes
+- name: Install unzip
+  apt:
+    name: unzip
+    state: latest
+- name: Extract files
+  unarchive:
+    src: https://www.free-css.com/assets/files/free-css-templates/download/page204/lancar.zip
+    dest: /var/www/html/
+    remote_src: yes
+- name: Disable SELinux
+  selinux:
+    state: disabled
