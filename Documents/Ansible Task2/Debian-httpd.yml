@@ -17,6 +17,3 @@
     src: https://www.free-css.com/assets/files/free-css-templates/download/page204/lancar.zip
     dest: /var/www/html/
     remote_src: yes
-- name: Disable SELinux
-  selinux:
-    state: disabled
